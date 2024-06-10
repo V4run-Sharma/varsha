@@ -73,3 +73,31 @@
     @apply bg-background text-foreground;
   }
 }
+
+* {
+  scrollbar-gutter: stable;
+}
+
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background: #d4d4d4;
+  border: solid 3.5px white;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  border-radius: 100px;
+  background: #404040;
+  border: solid 3.5px #0a0a0a;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #a3a3a3
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #525252
+}

@@ -1,12 +1,16 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Alata } from "next/font/google";
 
 import { ThemeProvider } from "@/components/theme-provider";
-import { ModeToggle } from "@/components/mode-toggle";
 
 import "./globals.css";
+import Footer from "@/app/_components/footer";
+import Header from "./_components/header";
 
-const inter = Inter({ subsets: ["latin"] });
+const alata = Alata({
+  weight: "400",
+  subsets: ["latin"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -20,12 +24,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={alata.className}>
         <ThemeProvider attribute="class" disableTransitionOnChange>
-          <div className="absolute top-4 left-4">
-            <ModeToggle />
-          </div>
+          <Header />
           {children}
+          <Footer />
         </ThemeProvider>
       </body>
     </html>
